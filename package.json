@@ -1,0 +1,65 @@
+{
+  "name": "debug-shutdown",
+  "displayName": "Debug Shutdown",
+  "description": "A custom shutdown button for debug in vscode",
+  "version": "0.0.1",
+  "publisher": "mago",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "icon": "media/shutdown.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onDebug"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "debug-shutdown.main",
+      "title": "Shutdown",
+      "icon": "media/shutdown.svg"
+    }],
+    "menus": {
+      "debug/toolBar": [{
+          "command": "debug-shutdown.main",
+          "group": "navigation@100",
+          "when": "inDebugMode"
+      }]
+    },
+    "configuration": {
+      "title": "Debug Shutdown",
+      "properties": {
+        "debug-shutdown.signal": {
+          "type": "string",
+          "default": "SIGINT",
+          "description": "Signal to shutdown the debug process."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.23.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/o-mago/debug-shutdown.git"
+  },
+  "pricing": "Free",
+  "sponsor": {
+    "url": "https://github.com/sponsors/o-mago"
+  }
+}
