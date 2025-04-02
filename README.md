@@ -1,6 +1,8 @@
 # debug-shutdown
 (Only works with Unix systems)
 
+![Debug Shutdown](media/shutdown.png)
+
 ## Features
 
 A custom shutdown button for debug in vscode.

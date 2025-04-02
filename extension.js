@@ -2,7 +2,6 @@ const vscode = require('vscode');
 
 const child_process = require('child_process');
 
-
 /**
  * @param {vscode.ExtensionContext} context
  */
