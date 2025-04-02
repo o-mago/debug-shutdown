@@ -1,6 +1,8 @@
 # debug-shutdown
 (Only works with Unix systems)
 
+MarketPlace: https://marketplace.visualstudio.com/items?itemName=mago.debug-shutdown
+
 ![Debug Shutdown](media/shutdown.png)
 
 ## Features
