@@ -10,6 +10,12 @@ function activate(context) {
 		const config = vscode.workspace.getConfiguration('debug-shutdown');
 		const signal = config.get('signal');
 
+		if (process.platform === 'win32') {
+			child_process.execSync(`taskkill /IM __debug_bin`);
+
+			return;
+		}
+
 		child_process.execSync(`pkill -${signal} __debug_bin`);
 	});
 
